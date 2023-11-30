@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 import sys
 
 argv = sys.argv[1]
-masterColor = ['', 'red', 'orange', 'violet', 'pink', 'purple']
-mpiColor = ['', 'blue', 'green', 'black', 'brown', 'gray']
-
+#masterColor = ['', 'red', 'orange', 'violet', 'pink', 'purple']
+masterColor = ['', 'red', 'red', 'red', 'red', 'red']
+#mpiColor = ['', 'blue', 'green', 'black', 'brown', 'gray']
+mpiColor = ['', 'blue', 'blue', 'blue', 'blue', 'blue']
 
 for suffix in range(1, 6):
     with open("master/" + argv + "/" + argv + "_" + str(suffix) + ".data") as f:
@@ -31,7 +32,6 @@ for suffix in range(1, 6):
 
         # Plot data
         plt.plot(X, y, color=masterColor[suffix])
-
 
 for suffix in range(1, 6):
     with open("minhmpi/" + argv + '/' + argv + '_' + str(suffix) + '.data') as f:
