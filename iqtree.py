@@ -58,8 +58,8 @@ for suffix in range(1, 6):
         # Plot data
         plt.plot(X, y, color=mpiColor[suffix])
 
-# plt.savefig("graph/" + argv + "/" + argv + ".png")
-plt.show()
+plt.savefig("graph/" + argv + ".png")
+# plt.show()
 
 """
 Command is:
