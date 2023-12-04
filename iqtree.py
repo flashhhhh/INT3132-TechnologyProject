@@ -61,7 +61,7 @@ for suffix in range(1, 6):
         plt.plot(X, y, color=mpiColor[suffix])
 
 
-for suffix in range(1, 4):
+for suffix in range(1, 6):
     with open("hoangmpi/" + argv + '/' + argv + '_' + str(suffix) + '.data') as f:
         data = f.readlines()
         data = [x.strip() for x in data]
