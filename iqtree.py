@@ -10,6 +10,8 @@ mpiColor = ['', 'blue', 'blue', 'blue', 'blue', 'blue']
 
 hoangColor = ['', 'green', 'green', 'green', 'green', 'green']
 
+plt.figure(figsize=(24, 13.5))
+
 for suffix in range(1, 6):
     with open("master/" + argv + "/" + argv + "_" + str(suffix) + ".data") as f:
         data = f.readlines()
