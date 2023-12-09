@@ -4,15 +4,16 @@ import sys
 
 argv = sys.argv[1]
 #masterColor = ['', 'red', 'orange', 'violet', 'pink', 'purple']
-masterColor = ['', 'red', 'red', 'red', 'red', 'red']
+masterColor = ['', 'red', 'orange', 'red', 'red', 'red']
 #mpiColor = ['', 'blue', 'green', 'black', 'brown', 'gray']
-mpiColor = ['', 'blue', 'blue', 'blue', 'blue', 'blue']
+mpiColor = ['', 'blue', 'lightblue', 'blue', 'blue', 'blue']
 
-hoangColor = ['', 'green', 'green', 'green', 'green', 'green']
+hoangColor = ['', 'green', 'lightgreen', 'green', 'green', 'green']
 
 plt.figure(figsize=(24, 13.5))
+numData = 2
 
-for suffix in range(1, 6):
+for suffix in range(1, numData + 1):
     with open("master/" + argv + "/" + argv + "_" + str(suffix) + ".data") as f:
         data = f.readlines()
         data = [x.strip() for x in data]
@@ -35,9 +36,9 @@ for suffix in range(1, 6):
             y = np.append(y, float(data[i, 1]))
 
         # Plot data
-        plt.plot(X, y, color=masterColor[suffix])
+        plt.plot(X, y, color=masterColor[suffix], label="master " + str(suffix))
 
-for suffix in range(1, 6):
+for suffix in range(1, numData + 1):
     with open("minhmpi/" + argv + '/' + argv + '_' + str(suffix) + '.data') as f:
         data = f.readlines()
         data = [x.strip() for x in data]
@@ -60,10 +61,9 @@ for suffix in range(1, 6):
             y = np.append(y, float(data[i, 1]))
 
         # Plot data
-        plt.plot(X, y, color=mpiColor[suffix])
+        plt.plot(X, y, color=mpiColor[suffix], label="minhmpi " + str(suffix))
 
-
-for suffix in range(1, 6):
+for suffix in range(1, numData + 1):
     with open("hoangmpi/" + argv + '/' + argv + '_' + str(suffix) + '.data') as f:
         data = f.readlines()
         data = [x.strip() for x in data]
@@ -86,10 +86,11 @@ for suffix in range(1, 6):
             y = np.append(y, float(data[i, 1]))
 
         # Plot data
-        plt.plot(X, y, color=hoangColor[suffix])
+        plt.plot(X, y, color=hoangColor[suffix], label="hoangmpi " + str(suffix))
 
+plt.legend()
 plt.savefig("graph/" + argv + ".png")
-# plt.show()
+plt.show()
 
 """
 Command is:
