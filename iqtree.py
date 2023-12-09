@@ -90,7 +90,7 @@ for suffix in range(1, numData + 1):
 
 plt.legend()
 plt.savefig("graph/" + argv + ".png")
-plt.show()
+# plt.show()
 
 """
 Command is:
