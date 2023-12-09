@@ -6,7 +6,7 @@ argv = sys.argv[1]
 #masterColor = ['', 'red', 'orange', 'violet', 'pink', 'purple']
 masterColor = ['', 'red', 'orange', 'red', 'red', 'red']
 #mpiColor = ['', 'blue', 'green', 'black', 'brown', 'gray']
-mpiColor = ['', 'blue', 'lightblue', 'blue', 'blue', 'blue']
+mpiColor = ['', 'blue', 'purple', 'blue', 'blue', 'blue']
 
 hoangColor = ['', 'green', 'lightgreen', 'green', 'green', 'green']
 
